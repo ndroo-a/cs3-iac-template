@@ -1,0 +1,19 @@
+---
+- name: Harden the Local Kali Machine
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - role: hardening
+      tags: hardening
+
+- name: Deploy Nginx web server
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - role: webserver
+      tags: webserver
+
+
+
